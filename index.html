@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOGUE-TECH | Paket 5 Premium Fashion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:italic,wght@600;700&family=Plus+Jakarta+Sans:wght@200;800&family=Unbounded:wght@900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-blue: #0038ff;
+            --bg-dark: #080808;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+        .font-heading { font-family: 'Unbounded', sans-serif; }
+
+        /* Custom Noise Texture */
+        .noise::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://grainy-gradients.vercel.app/noise.svg');
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        /* Kinetic Typography Scroll */
+       .scrolling-text {
+    font-size: 15vw;
+    line-height: 0.9;
+    color: rgba(255, 255, 255, 0.8); /* Putih soft (tidak menusuk mata) */
+    white-space: nowrap;
+    display: flex;
+    user-select: none;
+    text-transform: uppercase;
+    letter-spacing: -0.02em; /* Membuat teks lebih rapat & aesthetic */
+}
+
+        .scrolling-text span {
+            animation: scroll-text 20s linear infinite;
+        }
+
+        @keyframes scroll-text {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* Fashion Card Effects */
+        .fashion-card {
+            position: relative;
+            overflow: hidden;
+            clip-path: inset(0 0 0 0);
+            transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .fashion-card img {
+            transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .fashion-card:hover img {
+            transform: scale(1.1) rotate(1deg);
+        }
+
+        /* Custom Cursor */
+        #cursor-follower {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            mix-blend-mode: difference;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+
+        .luxury-border {
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: border 0.5s ease;
+        }
+
+        .luxury-border:hover {
+            border-color: var(--brand-blue);
+        }
+    </style>
+</head>
+<body class="noise">
+    <div id="cursor-follower"></div>
+
+    <header class="fixed w-full z-[100] p-8 flex justify-between items-center mix-blend-difference">
+        <div class="font-heading text-2xl tracking-tighter text-white">PAKET<span class="italic text-blue-600">PREMIUM</span></div>
+        <div class="flex gap-12 text-[10px] font-bold uppercase tracking-[0.4em]">
+            <a href="#about" class="hover:line-through">Story</a>
+            <a href="#collection" class="hover:line-through">Collection</a>
+            <a href="#features" class="hover:line-through">Exclusive</a>
+            <a href="#cta" class="text-blue-500">Contact</a>
+        </div>
+    </header>
+
+    <section class="relative h-screen flex flex-col justify-center items-center px-6 pt-20">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] -z-10">
+            <div class="absolute inset-0 bg-blue-600/10 blur-[150px] animate-pulse"></div>
+        </div>
+
+        <h1 class="font-heading text-6xl md:text-[10rem] leading-[0.8] text-center uppercase tracking-tighter">
+            PAKET 5<br> 
+            <span class="font-serif italic text-blue-500 lowercase -mt-4 block">premium fashion.</span>
+        </h1>
+
+        <div class="mt-12 flex flex-col items-center">
+            <p class="max-w-md text-center text-gray-400 text-sm tracking-widest uppercase mb-8">
+                Flagship Brand Experience • Desain Eksklusif • Narasi Kuat
+            </p>
+            <div class="w-[1px] h-32 bg-gradient-to-b from-blue-600 to-transparent"></div>
+        </div>
+    </section>
+
+    <div class="scrolling-text font-heading overflow-hidden border-y border-white/5 py-4">
+        <span>&nbsp;STORYTELLING • CUSTOM ANIMATION • TRACKING PIXEL • COPYWRITING • FLAGSHIP&nbsp;</span>
+        <span>&nbsp;STORYTELLING • CUSTOM ANIMATION • TRACKING PIXEL • COPYWRITING • FLAGSHIP&nbsp;</span>
+    </div>
+
+    <section id="features" class="py-40 px-8 max-w-[1600px] mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+            
+            <div class="md:col-span-7 fashion-card aspect-[16/9] group">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0" alt="Editorial Fashion">
+                <div class="absolute inset-0 bg-black/40 p-12 flex flex-col justify-end">
+                    <span class="text-blue-500 font-bold tracking-[0.5em] text-[10px] mb-4 uppercase">Visual Authority</span>
+                    <h3 class="font-serif text-5xl md:text-7xl italic">Desain Eksklusif.</h3>
+                </div>
+            </div>
+
+            <div class="md:col-span-5 flex flex-col justify-center luxury-border p-12 bg-zinc-900/30">
+                <h4 class="font-heading text-xl mb-6">CUSTOM<br>ANIMASI.</h4>
+                <p class="text-gray-400 font-light leading-relaxed mb-8">
+                    Sentuhan kinetik di setiap scroll. Kami menghadirkan transisi halus yang memberikan nyawa pada setiap koleksi fashion Anda.
+                </p>
+                <div class="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center group hover:bg-white hover:text-black transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-width="2"/></svg>
+                </div>
+            </div>
+
+            <div class="md:col-span-4 luxury-border overflow-hidden flex flex-col group relative">
+    <div class="absolute inset-0 w-full h-full -z-10 opacity-30 group-hover:opacity-50 transition-opacity duration-700">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+            <source src="storytalling.mp4" type="video/mp4">
+            </video>
+    </div>
+
+    <div class="p-12 flex flex-col justify-between h-full bg-gradient-to-t from-black via-black/20 to-transparent">
+        <div>
+            <span class="text-blue-500 font-bold tracking-widest text-[10px] uppercase">The Soul</span>
+            <h3 class="font-serif text-5xl italic mt-4 relative">
+                Storytelling &<br>Copywriting.
+            </h3>
+        </div>
+        <p class="text-sm text-gray-400 mt-20 leading-relaxed group-hover:text-white transition-colors">
+            Narasi kuat yang menceritakan filosofi brand Anda, bukan sekadar menjual pakaian.
+        </p>
+    </div>
+</div>
+
+            <div class="md:col-span-8 fashion-card aspect-[21/9] group">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover brightness-50" alt="Store Analytics">
+                <div class="absolute inset-0 flex items-center justify-center text-center p-12">
+                    <div class="max-w-md">
+                        <h3 class="font-heading text-3xl mb-6">TRACKING PIXEL INTEGRATION.</h3>
+                        <p class="text-xs tracking-[0.4em] text-blue-400 font-black uppercase">Scale your sales with precision data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="collection" class="py-40 px-8 max-w-[1600px] mx-auto border-t border-white/5">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20">
+            <div>
+                <span class="text-blue-500 font-bold tracking-[0.5em] text-[10px] uppercase block mb-4">Product Showcase</span>
+                <h2 class="font-serif text-6xl md:text-8xl italic leading-none">The Curated<br>Objects.</h2>
+            </div>
+            <p class="max-w-xs text-gray-500 text-[10px] uppercase tracking-widest leading-loose mt-8 md:mt-0">
+                Eksplorasi visual produk fashion premium yang kami kemas dengan estetika tinggi dan narasi yang menjual.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="fashion-card aspect-[3/4] group">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1935&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Premium Bag">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
+                    <span class="text-blue-400 text-[9px] font-black uppercase tracking-widest mb-2">Leather Goods</span>
+                    <h4 class="font-serif text-3xl italic">Sculptural Handbag</h4>
+                </div>
+            </div>
+
+            <div class="fashion-card aspect-[3/4] group">
+                <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=1780&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Luxury Shoes">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
+                    <span class="text-blue-400 text-[9px] font-black uppercase tracking-widest mb-2">Footwear</span>
+                    <h4 class="font-serif text-3xl italic">Minimalist Stiletto</h4>
+                </div>
+            </div>
+
+            <div class="fashion-card aspect-[3/4] group">
+                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1887&auto=format&fit=crop" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="High Fashion Apparel">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
+                    <span class="text-blue-400 text-[9px] font-black uppercase tracking-widest mb-2">Ready to Wear</span>
+                    <h4 class="font-serif text-3xl italic">Tailored Couture</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+             <div class="luxury-border p-12 flex flex-col justify-center items-center text-center bg-zinc-900/10 hover:bg-zinc-900/40 transition-colors">
+                <img src="https://images.unsplash.com/photo-1608234807905-4466023792f5?q=80&w=1935&auto=format&fit=crop" class="w-32 h-32 object-cover rounded-full mb-8 border border-white/10" alt="Detail">
+                <h3 class="font-heading text-lg mb-4">DETAIL PERFECTION.</h3>
+                <p class="text-xs text-gray-500 tracking-widest leading-loose uppercase">Setiap jahitan dan material ditampilkan dengan resolusi tinggi untuk membangun kepercayaan.</p>
+             </div>
+             <div class="luxury-border p-12 flex flex-col justify-center items-center text-center bg-zinc-900/10 hover:bg-zinc-900/40 transition-colors">
+                <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?q=80&w=1712&auto=format&fit=crop" class="w-32 h-32 object-cover rounded-full mb-8 border border-white/10" alt="Detail">
+                <h3 class="font-heading text-lg mb-4">SENSE OF LUXURY.</h3>
+                <p class="text-xs text-gray-500 tracking-widest leading-loose uppercase">Produk bukan hanya objek, tapi simbol status yang kami komunikasikan secara visual.</p>
+             </div>
+        </div>
+    </section>
+
+    <section id="cta" class="py-40 bg-white text-black text-center relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <span class="font-bold tracking-[0.8em] text-[10px] uppercase mb-8 block">Ready for the transformation?</span>
+            <h2 class="font-serif text-7xl md:text-[10rem] italic leading-none mb-16 tracking-tighter lowercase">
+                be a <span class="text-blue-600">flagship</span> brand.
+            </h2>
+            
+            <a href="https://wa.me/6281234567890" class="inline-block border-2 border-black px-20 py-8 font-heading text-xs uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-500 rounded-full">
+                Mulai Kolaborasi
+            </a>
+            
+            <div class="mt-24 grid grid-cols-2 md:grid-cols-4 gap-4 text-[9px] font-black uppercase tracking-widest opacity-40">
+                <span>Fitur Lengkap</span>
+                <span>2026 Edition</span>
+                <span>Exclusive Slot</span>
+                <span>Full Narrative</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="p-12 text-center text-[9px] tracking-[0.5em] text-gray-600">
+        DESIGNED FOR THE BOLD. HYPED UP © 2026
+    </footer>
+
+    <script>
+        // Custom Cursor Follower
+        const follower = document.getElementById('cursor-follower');
+        document.addEventListener('mousemove', (e) => {
+            follower.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+        });
+
+        // Click effect for cursor
+        document.addEventListener('mousedown', () => follower.style.transform += ' scale(2.5)');
+        document.addEventListener('mouseup', () => follower.style.transform += ' scale(1)');
+
+        // Simple Fade In on Scroll
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-20');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fashion-card, .luxury-border').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-20', 'transition-all', 'duration-[1200ms]', 'ease-out');
+            observer.observe(el);
+        });
+    </script>
+</body>
